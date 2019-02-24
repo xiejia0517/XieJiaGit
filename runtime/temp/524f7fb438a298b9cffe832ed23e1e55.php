@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"F:\phpStudy\PHPTutorial\WWW\self\public/../application/admin\view\index\test.htm";i:1550985948;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"F:\phpStudy\PHPTutorial\WWW\self\public/../application/admin\view\index\test.htm";i:1550997836;}*/ ?>
 <!DOCTYPE html>
 <html><head>
 	    <meta charset="utf-8">
@@ -21,51 +21,56 @@
     <script>
         window.onload = function (){
             new Vue({
-                el:'#box',
+                el:"#box",
                 data() {
                     return {
-                        msg:'New Vue First!',
-                        arr:['apple','banana','orange','pear'],
-                        json:{a:'text1',b:'text2',c:'text3',d:'text4'},
-                        a:true
+                        isvisible:true,
+                        msg:'aaa',
                     }
                 },
                 methods: {
-                    show:function(){
-                        alert(1);
-                    },
-                    add:function(){
-                        a = false;
-                    },
                     test:function(){
-                        $.ajax({
-                            type:"post",
-                            url:"<?php echo url('index/testAPI'); ?>",
-                            dataType:"json",
-                            success:function(data){
-                                if(data ==2)
-                                {
-                                    this.data.msg = 'aa';
-                                }
-                            },
-                        })
+                        if(this.isvisible == true)
+                        {  
+                            this.isvisible = false;
+                            this.msg = 'bbb';
+                        }
+                        else
+                        {
+                            this.isvisible = true;
+                            this.msg = 'aaa';
+                        }
                     },
                 },
             });
         }
     </script>
+    <style>
+        *{
+            margin-left: 15px;
+        }
+        .div1{
+            width: 100px;
+            height: 100px;
+            background:red;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
-    
+    <hr>
     <div id="box">
-        <input type="button" value="$http" @click="test()">
+        <button @click="test()">toggle</button><br>
         {{msg}}
+        <div class="div1" v-show='isvisible'></div>
+        <hr>
+        <input type="button" value="$http" >
     </div>
     <hr>
-    <form action="testAPI" method="POST">
+    <!-- <form action="testAPI" method="POST">
         <input type="text" name="test">
         <input type="submit" value="测试提交">
-    </form>
+    </form> -->
     
 	    <!--Basic Scripts-->
     <script src="../../../../public/static/admin/style/jquery_002.js"></script>
@@ -74,6 +79,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!--Beyond Scripts-->
     <script src="../../../../public/static/admin/style/beyond.js"></script>
+    <!-- <script src="../../../../public/static/admin/style/test.js"></script> -->
     
 
 
