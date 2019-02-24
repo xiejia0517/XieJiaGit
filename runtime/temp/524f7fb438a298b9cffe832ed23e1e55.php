@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"F:\phpStudy\PHPTutorial\WWW\self\public/../application/admin\view\index\test.htm";i:1550997836;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"F:\phpStudy\PHPTutorial\WWW\self\public/../application/admin\view\index\test.htm";i:1551001523;}*/ ?>
 <!DOCTYPE html>
 <html><head>
 	    <meta charset="utf-8">
@@ -25,21 +25,12 @@
                 data() {
                     return {
                         isvisible:true,
-                        msg:'aaa',
+                        msg:'Edit Me!',
                     }
                 },
                 methods: {
                     test:function(){
-                        if(this.isvisible == true)
-                        {  
-                            this.isvisible = false;
-                            this.msg = 'bbb';
-                        }
-                        else
-                        {
-                            this.isvisible = true;
-                            this.msg = 'aaa';
-                        }
+                        this.isvisible = !this.isvisible;
                     },
                 },
             });
@@ -60,11 +51,9 @@
 <body>
     <hr>
     <div id="box">
-        <button @click="test()">toggle</button><br>
-        {{msg}}
-        <div class="div1" v-show='isvisible'></div>
+        <span @click="test">显示内容:<a href="javascript:">{{msg}}</a></span>
         <hr>
-        <input type="button" value="$http" >
+        <input type="text" v-show="isvisible" v-model="msg">
     </div>
     <hr>
     <!-- <form action="testAPI" method="POST">

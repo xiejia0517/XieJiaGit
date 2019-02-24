@@ -24,21 +24,12 @@
                 data() {
                     return {
                         isvisible:true,
-                        msg:'aaa',
+                        msg:'Edit Me!',
                     }
                 },
                 methods: {
                     test:function(){
-                        if(this.isvisible == true)
-                        {  
-                            this.isvisible = false;
-                            this.msg = 'bbb';
-                        }
-                        else
-                        {
-                            this.isvisible = true;
-                            this.msg = 'aaa';
-                        }
+                        this.isvisible = !this.isvisible;
                     },
                 },
             });
@@ -59,7 +50,9 @@
 <body>
     <hr>
     <div id="box">
-        
+        <span @click="test">显示内容:<a href="javascript:">{{msg}}</a></span>
+        <hr>
+        <input type="text" v-show="isvisible" v-model="msg">
     </div>
     <hr>
     <!-- <form action="testAPI" method="POST">
