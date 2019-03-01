@@ -17,45 +17,49 @@
     <link href="../../../../public/static/admin/style/demo.css" rel="stylesheet">
     <link href="../../../../public/static/admin/style/typicons.css" rel="stylesheet">
     <link href="../../../../public/static/admin/style/animate.css" rel="stylesheet">
-    
+    <style>
+        #div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+    </style>
 </head>
 <body>
-    <!-- 头部 -->
-
-    {include file="common/header"}
-
-	<!-- /头部 -->
-	
-	<div class="main-container container-fluid">
-		<div class="page-container">
-			            <!-- Page Sidebar -->
-            {include file="common/left"}
-            <!-- /Page Sidebar -->
-            <!-- Page Content -->
-            <div class="page-content">
-                <!-- Page Breadcrumb -->
-                <div class="page-breadcrumbs">
-                    <ul class="breadcrumb">
-                                        <li class="active">控制面板</li>
-                                        </ul>
-                </div>
-                <!-- /Page Breadcrumb -->
-
-                <!-- Page Body -->
-                <div class="page-body">
-                    
-				<div style="text-align:center; line-height:1000%; font-size:24px;">
-                aaaaaaaaaaaaaaaa<br>
-                <p style="color:#f00;">bbbbbbbbbbbbbb</p></div>
-                </div>
-                
-
-                </div>
-                <!-- /Page Body -->
-            </div>
-            <!-- /Page Content -->
-		</div>	
-	</div>
+    <p>DROG:</p>
+    <div id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br>
+    <img id="drag1" src="../../../../public/static/admin/images/logo.png" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)" draggable="true" ondragstart="drag(event)" width="300" height="56">
+    
+    <script>
+    function allowDrop(ev){
+        alert(ev);
+        //ev.preventDefault();
+    }
+    function touchstart(ev){
+        alert(ev);
+        //ev.preventDefault();
+    }
+    function ontouchmove(ev){
+        alert(ev);
+        //ev.preventDefault();
+    }
+    function ontouchend(ev){
+        alert(ev);
+        //ev.preventDefault();
+    }
+    
+    function drag(ev){
+        alert(ev);
+        //ev.dataTransfer.setData("Text",ev.target.id);
+    }
+    function test(ev)
+    {
+        alert(ev);
+    }
+    function drop(ev){
+        ev.preventDefault();
+        var data=ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+    
+    </script>
 
 	    <!--Basic Scripts-->
     <script src="../../../../public/static/admin/style/jquery_002.js"></script>

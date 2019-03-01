@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"F:\phpStudy\PHPTutorial\WWW\self\public/../application/admin\view\index\index.htm";i:1542968141;s:73:"F:\phpStudy\PHPTutorial\WWW\self\application\admin\view\common\header.htm";i:1542967627;s:71:"F:\phpStudy\PHPTutorial\WWW\self\application\admin\view\common\left.htm";i:1545732580;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"F:\phpStudy\PHPTutorial\WWW\self\public/../application/admin\view\index\index.htm";i:1551457521;}*/ ?>
 <!DOCTYPE html>
 <html><head>
 	    <meta charset="utf-8">
@@ -18,208 +18,49 @@
     <link href="../../../../public/static/admin/style/demo.css" rel="stylesheet">
     <link href="../../../../public/static/admin/style/typicons.css" rel="stylesheet">
     <link href="../../../../public/static/admin/style/animate.css" rel="stylesheet">
-    
+    <style>
+        #div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+    </style>
 </head>
 <body>
-    <!-- 头部 -->
-
-    <div class="navbar">
-    <div class="navbar-inner">
-        <div class="navbar-container">
-            <!-- Navbar Barnd -->
-            <div class="navbar-header pull-left">
-                <a href="#" class="navbar-brand">
-                    <small>
-                            <img src="../../../../public/static/admin/images/logo.png" alt="">
-                        </small>
-                </a>
-            </div>
-            <!-- /Navbar Barnd -->
-            <!-- Sidebar Collapse -->
-            <div class="sidebar-collapse" id="sidebar-collapse">
-                <i class="collapse-icon fa fa-bars"></i>
-            </div>
-            <!-- /Sidebar Collapse -->
-            <!-- Account Area and Settings -->
-            <div class="navbar-header pull-right">
-                <div class="navbar-account">
-                    <ul class="account-area">
-                        <li>
-                            <a class="login-area dropdown-toggle" data-toggle="dropdown">
-                                <div class="avatar" title="View your public profile">
-                                    <img src="../../../../public/static/admin/images/adam-jansen.jpg">
-                                </div>
-                                <section>
-                                    <h2><span class="profile"><span>admin</span></span></h2>
-                                </section>
-                            </a>
-                            <!--Login Area Dropdown-->
-                            <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
-                                <li class="username"><a>David Stevenson</a></li>
-                                <li class="dropdown-footer">
-                                    <a href="/admin/user/logout.html">
-                                            退出登录
-                                        </a>
-                                </li>
-                                <li class="dropdown-footer">
-                                    <a href="/admin/user/changePwd.html">
-                                            修改密码
-                                        </a>
-                                </li>
-                            </ul>
-                            <!--/Login Area Dropdown-->
-                        </li>
-                        <!-- /Account Area -->
-                        <!--Note: notice that setting div must start right after account area list.
-                            no space must be between these elements-->
-                        <!-- Settings -->
-                    </ul>
-                </div>
-            </div>
-            <!-- /Account Area and Settings -->
-        </div>
-    </div>
-</div>
-
-	<!-- /头部 -->
-	
-	<div class="main-container container-fluid">
-		<div class="page-container">
-			            <!-- Page Sidebar -->
-            <div class="page-sidebar" id="sidebar">
-    <!-- Page Sidebar Header-->
-    <div class="sidebar-header-wrapper">
-        <input class="searchinput" type="text">
-        <i class="searchicon fa fa-search"></i>
-        <div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>
-    </div>
-    <!-- /Page Sidebar Header -->
-    <!-- Sidebar Menu -->
-    <ul class="nav sidebar-menu">
-        <!--Dashboard-->
-       
-        <li>
-            <a href="#" class="menu-dropdown">
-                <i class="menu-icon fa fa-user"></i>
-                <span class="menu-text">管理员</span>
-                <i class="menu-expand"></i>
-            </a>
-            <ul class="submenu">
-                <li>
-                    <a href="<?php echo url('admin/lst'); ?>">
-                        <span class="menu-text">
-                            管理列表                                    </span>
-                        <i class="menu-expand"></i>
-                    </a>
-                </li>
-            </ul>                            
-        </li> 
-
-        <li>
-            <a href="#" class="menu-dropdown">
-                <i class="menu-icon fa fa-folder-o"></i>
-                <span class="menu-text">栏目</span>
-                <i class="menu-expand"></i>
-            </a>
-            <ul class="submenu">
-                <li>
-                    <a href="<?php echo url('cate/lst'); ?>">
-                        <span class="menu-text">
-                            栏目列表                                    </span>
-                        <i class="menu-expand"></i>
-                    </a>
-                </li>
-            </ul>                            
-        </li>
-
-        <li>
-            <a href="#" class="menu-dropdown">
-                <i class="menu-icon fa fa-file-text"></i>
-                <span class="menu-text">文档</span>
-                <i class="menu-expand"></i>
-            </a>
-            <ul class="submenu">
-                <li>
-                    <a href="<?php echo url('article/lst'); ?>">
-                        <span class="menu-text">
-                            文章列表                                    </span>
-                        <i class="menu-expand"></i>
-                    </a>
-                </li>
-            </ul>                            
-        </li> 
-
-        <li>
-            <a href="#" class="menu-dropdown">
-                <i class="menu-icon fa fa-chain-broken"></i>
-                <span class="menu-text">友情链接</span>
-                <i class="menu-expand"></i>
-            </a>
-            <ul class="submenu">
-                <li>
-                    <a href="<?php echo url('link/lst'); ?>">
-                        <span class="menu-text">
-                            链接列表                                    </span>
-                        <i class="menu-expand"></i>
-                    </a>
-                </li>
-            </ul>                            
-        </li> 
-
-        <li>
-            <a href="#" class="menu-dropdown">
-                <i class="menu-icon fa fa-gear"></i>
-                <span class="menu-text">系统</span>
-                <i class="menu-expand"></i>
-            </a>
-            <ul class="submenu">
-                <li>
-                    <a href="<?php echo url('config/lst'); ?>">
-                        <span class="menu-text">
-                            配置项                                   </span>
-                        <i class="menu-expand"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo url('config/lst'); ?>">
-                        <span class="menu-text">
-                            配置列表                                   </span>
-                        <i class="menu-expand"></i>
-                    </a>
-                </li>
-                
-            </ul>                            
-        </li>                          
-        
-    </ul>
-    <!-- /Sidebar Menu -->
-</div>
-            <!-- /Page Sidebar -->
-            <!-- Page Content -->
-            <div class="page-content">
-                <!-- Page Breadcrumb -->
-                <div class="page-breadcrumbs">
-                    <ul class="breadcrumb">
-                                        <li class="active">控制面板</li>
-                                        </ul>
-                </div>
-                <!-- /Page Breadcrumb -->
-
-                <!-- Page Body -->
-                <div class="page-body">
-                    
-				<div style="text-align:center; line-height:1000%; font-size:24px;">
-                aaaaaaaaaaaaaaaa<br>
-                <p style="color:#f00;">bbbbbbbbbbbbbb</p></div>
-                </div>
-                
-
-                </div>
-                <!-- /Page Body -->
-            </div>
-            <!-- /Page Content -->
-		</div>	
-	</div>
+    <p>DROG:</p>
+    <div id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br>
+    <img id="drag1" src="../../../../public/static/admin/images/logo.png" ontouchstart="touchstart(event)" ontouchmove="touchmove(event)" ontouchend="touchend(event)" draggable="true" ondragstart="drag(event)" width="300" height="56">
+    
+    <script>
+    function allowDrop(ev){
+        alert(ev);
+        //ev.preventDefault();
+    }
+    function touchstart(ev){
+        alert(ev);
+        //ev.preventDefault();
+    }
+    function ontouchmove(ev){
+        alert(ev);
+        //ev.preventDefault();
+    }
+    function ontouchend(ev){
+        alert(ev);
+        //ev.preventDefault();
+    }
+    
+    function drag(ev){
+        alert(ev);
+        //ev.dataTransfer.setData("Text",ev.target.id);
+    }
+    function test(ev)
+    {
+        alert(ev);
+    }
+    function drop(ev){
+        ev.preventDefault();
+        var data=ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+    
+    </script>
 
 	    <!--Basic Scripts-->
     <script src="../../../../public/static/admin/style/jquery_002.js"></script>
