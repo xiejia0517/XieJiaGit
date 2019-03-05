@@ -17,6 +17,18 @@
     <link href="../../../../public/static/admin/style/demo.css" rel="stylesheet">
     <link href="../../../../public/static/admin/style/typicons.css" rel="stylesheet">
     <link href="../../../../public/static/admin/style/animate.css" rel="stylesheet">
+    <style>
+            *{
+                margin-left: 15px;
+            }
+            .div1{
+                width: 100px;
+                height: 100px;
+                background:red;
+                margin-top: 15px;
+            }
+            .red {background-color: skyblue;}
+        </style>
     <script>
         window.onload = function (){
             new Vue({
@@ -25,27 +37,29 @@
                     return {
                         isvisible:true,
                         msg:'Edit Me!',
+                        arr:[
+                            {desc:'a',bol:false},
+                            {desc:'b',bol:false},
+                            {desc:'c',bol:false},
+                            {desc:'d',bol:false},
+                            {desc:'e',bol:false},
+                        ],
                     }
                 },
                 methods: {
                     test:function(){
                         this.isvisible = !this.isvisible;
                     },
+                    fn:function(index){
+                        for(var i = 0; i < this.arr.length;i++){
+                            this.arr[i].bol = false;
+                        }
+                        this.arr[index].bol = true;
+                    },
                 },
             });
         }
     </script>
-    <style>
-        *{
-            margin-left: 15px;
-        }
-        .div1{
-            width: 100px;
-            height: 100px;
-            background:red;
-            margin-top: 15px;
-        }
-    </style>
 </head>
 <body>
     <hr>
@@ -53,6 +67,11 @@
         <span @click="test">显示内容:<a href="javascript:">{{msg}}</a></span>
         <hr>
         <input type="text" v-show="isvisible" v-model="msg">
+
+        <ul>
+            <li @click="fn(index)" v-bind:class="{red:item.bol}" v-for="(item,index) in arr">{{index + '-'}} {{item.desc}}</li>
+        </ul>
+
     </div>
     <hr>
     <!-- <form action="testAPI" method="POST">
